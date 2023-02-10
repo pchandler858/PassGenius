@@ -9,7 +9,6 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  // password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = generatePassword();
 }
@@ -63,25 +62,29 @@ function generatePassword() {
     return;
   }
 
-  // initialize characters with an empty string and then create a string of all the selected character sets.
+  // Concatenate all the selected character sets and initialize the string "characters" with an empty sting. Also, add a randomly select character from each selected character set to the "password" string.
   let characters = "";
 
   if (includeLowercase) {
     characters += lowercase;
+    password += lowercase.charAt(Math.floor(Math.random() * lowercase.length));
   }
   if (includeUppercase) {
     characters += uppercase;
+    password += uppercase.charAt(Math.floor(Math.random() * uppercase.length));
   }
   if (includeNumeric) {
     characters += numeric;
+    password += numeric.charAt(Math.floor(Math.random() * numeric.length));
   }
   if (includeSpecial) {
     characters += special;
+    password += special.charAt(Math.floor(Math.random() * special.length));
   }
   console.log("characters to use: ", characters);
 
   // Generate the password by randomly selecting characters from the selected sets
-  for (let i = 0; i < passwordLength; i++) {
+  for (let i = password.length; i < passwordLength; i++) {
     password += characters.charAt(
       Math.floor(Math.random() * characters.length)
     );
