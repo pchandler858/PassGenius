@@ -4,17 +4,14 @@ const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numeric = "0123456789";
 const special = "!@#$%^&*()_+-=[]{}|;':,.<>/\"?";
 
-// Initialize password as an empty string
-let password = "";
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  password = generatePassword();
+  // password = generatePassword();
   var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+  passwordText.value = generatePassword();
 }
 
 // Add event listener to generate button
@@ -22,6 +19,8 @@ generateBtn.addEventListener("click", writePassword);
 
 // Generate the password
 function generatePassword() {
+  // Initialize password as an empty string
+  let password = "";
   // Prompt the user for desired password length
   let passwordLength = parseFloat(
     prompt(
@@ -43,17 +42,14 @@ function generatePassword() {
   let includeLowercase = confirm(
     "Include lowercase characters in the password?"
   );
-  console.log("include lowercase: ", includeLowercase);
-
   let includeUppercase = confirm(
     "Include uppercase characters in the password?"
   );
-  console.log("include uppercase: ", includeUppercase);
-
   let includeNumeric = confirm("Include numeric characters in the password?");
-  console.log("include numeric: ", includeNumeric);
-
   let includeSpecial = confirm("Include special characters in the password?");
+  console.log("include lowercase: ", includeLowercase);
+  console.log("include uppercase: ", includeUppercase);
+  console.log("include numeric: ", includeNumeric);
   console.log("include special: ", includeSpecial);
 
   // Validate that at least one character type has been selected
@@ -82,7 +78,7 @@ function generatePassword() {
   if (includeSpecial) {
     characters += special;
   }
-  console.log(characters);
+  console.log("characters to use: ", characters);
 
   // Generate the password by randomly selecting characters from the selected sets
   for (let i = 0; i < passwordLength; i++) {
