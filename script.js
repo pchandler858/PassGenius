@@ -34,7 +34,7 @@ function generatePassword() {
       "Your password length must be between 8 and 128 characters. Please try again."
     );
     console.log("password doesn't meet param guidelines");
-    return;
+    return "";
   }
 
   // Prompt the user for the character types to include in the password
@@ -59,7 +59,7 @@ function generatePassword() {
     !includeSpecial
   ) {
     alert("You must select at least one character type. Please try again. ");
-    return;
+    return "";
   }
 
   // Concatenate all the selected character sets and initialize the string "characters" with an empty sting. Also, add a randomly select character from each selected character set to the "password" string.
