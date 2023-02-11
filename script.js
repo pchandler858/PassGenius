@@ -23,7 +23,7 @@ function generatePassword() {
   // Prompt the user for desired password length and convert the response to a integer
   let passwordLength = parseInt(
     prompt(
-      "Enter the desired length of you password (min. 8 characters, max 128 characters"
+      "Enter the desired length of you password (min. 8 characters, max 128 characters)"
     )
   );
 
