@@ -45,7 +45,7 @@ function generatePassword() {
   let includeNumeric = confirm("Include numeric characters in the password?");
   let includeSpecial = confirm("Include special characters in the password?");
 
-  // Validate that at least one character type has been selected
+  // Validate: at least one character type has been selected
   if (
     !includeLowercase &&
     !includeUppercase &&
