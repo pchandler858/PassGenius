@@ -2,7 +2,7 @@
 const lowercase = "abcdefghijklmnopqrstuvwxyz";
 const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numeric = "0123456789";
-const special = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+const special = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
