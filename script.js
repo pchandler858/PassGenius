@@ -20,20 +20,18 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   // Initialize password as an empty string
   let password = "";
-  // Prompt the user for desired password length and convert the response to a int
+  // Prompt the user for desired password length and convert the response to a integer
   let passwordLength = parseInt(
     prompt(
       "Enter the desired length of you password (min. 8 characters, max 128 characters"
     )
   );
-  console.log("passwordLength: ", passwordLength);
 
   // Prompt the user to meet length parameters if parameters not met
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert(
       "Your password length must be between 8 and 128 characters. Please try again."
     );
-    console.log("password doesn't meet param guidelines");
     return "";
   }
 
@@ -46,10 +44,6 @@ function generatePassword() {
   );
   let includeNumeric = confirm("Include numeric characters in the password?");
   let includeSpecial = confirm("Include special characters in the password?");
-  console.log("include lowercase: ", includeLowercase);
-  console.log("include uppercase: ", includeUppercase);
-  console.log("include numeric: ", includeNumeric);
-  console.log("include special: ", includeSpecial);
 
   // Validate that at least one character type has been selected
   if (
@@ -81,7 +75,6 @@ function generatePassword() {
     characters += special;
     password += special.charAt(Math.floor(Math.random() * special.length));
   }
-  console.log("characters to use: ", characters);
 
   // Generate the password by randomly selecting characters from the selected sets
   for (let i = password.length; i < passwordLength; i++) {
@@ -91,6 +84,5 @@ function generatePassword() {
   }
 
   // Return the generated password
-  console.log("password length: ", password.length, "password: ", password);
   return password;
 }
