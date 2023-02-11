@@ -20,8 +20,8 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   // Initialize password as an empty string
   let password = "";
-  // Prompt the user for desired password length
-  let passwordLength = parseFloat(
+  // Prompt the user for desired password length and convert the response to a int
+  let passwordLength = parseInt(
     prompt(
       "Enter the desired length of you password (min. 8 characters, max 128 characters"
     )
