@@ -27,7 +27,7 @@ function generatePassword() {
     )
   );
 
-  // Prompt the user to meet length parameters if parameters not met
+  // Validate: password length parameters met. If not, alert user.
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert(
       "Your password length must be between 8 and 128 characters. Please try again."
@@ -45,7 +45,7 @@ function generatePassword() {
   let includeNumeric = confirm("Include numeric characters in the password?");
   let includeSpecial = confirm("Include special characters in the password?");
 
-  // Validate: at least one character type has been selected
+  // Validate: at least one character type has been selected. If not, alert user.
   if (
     !includeLowercase &&
     !includeUppercase &&
