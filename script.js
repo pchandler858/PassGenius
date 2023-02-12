@@ -2,7 +2,7 @@
 const lowercase = "abcdefghijklmnopqrstuvwxyz";
 const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numeric = "0123456789";
-const special = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+const special = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -23,27 +23,31 @@ function generatePassword() {
   // Prompt the user for desired password length and convert the response to a integer
   let passwordLength = parseInt(
     prompt(
-      "Enter the desired length of your password (min. 8 characters, max 128 characters)"
+      "Enter the desired length of your password:\n(min. 8 characters; max 128 characters)"
     )
   );
 
   // Validate: password length parameters met. If not, alert user.
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert(
-      "Your password length must be between 8 and 128 characters. Please try again."
+      "Your password length must be between 8 and 128 characters.\nPlease try again."
     );
     return "";
   }
 
   // Prompt the user for the character types to include in the password
   let includeLowercase = confirm(
-    "Include lowercase characters in the password?"
+    "Include lowercase characters in the password?\n(OK = Yes; Cancel = No)"
   );
   let includeUppercase = confirm(
-    "Include uppercase characters in the password?"
+    "Include uppercase characters in the password?\n(OK = Yes; Cancel = No)"
   );
-  let includeNumeric = confirm("Include numeric characters in the password?");
-  let includeSpecial = confirm("Include special characters in the password?");
+  let includeNumeric = confirm(
+    "Include numeric characters in the password?\n(OK = Yes; Cancel = No)"
+  );
+  let includeSpecial = confirm(
+    "Include special characters in the password?\n(OK = Yes; Cancel = No)"
+  );
 
   // Validate: at least one character type has been selected. If not, alert user.
   if (
